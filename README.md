@@ -48,6 +48,20 @@ dfx deploy
 dfx generate backend
 ```
 
+4.1 Update your .env.local with your canister IDs (Run on WSL)
+After running `dfx deploy`, retrieve your backend canister ID:
+
+```bash
+dfx canister id backend # example output: sidufwl-skdfhxc-wuays
+```
+
+Then replace the values in `.env.example` with your actual backend canister ID.
+
+```env
+NEXT_PUBLIC_BACKEND_CANISTER_ID=sidufwl-skdfhxc-wuays
+DFX_NETWORK=local
+```
+
 > **IMPORTANT**: Move the generated declarations folder (`src/declarations`) to `frontend/src/declarations` for proper imports.
 
 5. Run frontend server (Run on a CLI of your choice)
