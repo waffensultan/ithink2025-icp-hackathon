@@ -72,7 +72,7 @@ cd frontend
 pnpm run dev
 ```
 
-## D-Day (Deployment Day)
+## D-Day (Deployment Day) ⚠️ FOR SUBMISSION ONLY ⚠️
 
 1. Build the frontend canister
 
