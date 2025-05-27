@@ -21,13 +21,7 @@ git clone https://github.com/waffensultan/ithink2025.git
 cd ithink2025
 ```
 
-2. Install Dependencies
-
-```bash
-pnpm install
-```
-
-3. Start local IC replica
+2. Start local IC replica
 
 ```bash
 dfx start --background
@@ -35,7 +29,7 @@ dfx start --background
 
 > This runs the local IC network on port 4943
 
-4. Create and deploy canisters
+3. Create and deploy canisters
 
 ```bash
 dfx canister create backend
@@ -44,10 +38,11 @@ dfx deploy
 dfx generate backend
 ```
 
-5. Run frontend server
+4. Run frontend server
 
 ```bash
 cd frontend
+pnpm install # install dependencies
 pnpm run dev
 ```
 
