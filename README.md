@@ -56,7 +56,7 @@ After running `dfx deploy`, retrieve your backend canister ID (Run on WSL):
 dfx canister id backend # example output: sidufwl-skdfhxc-wuays
 ```
 
-Then replace the values in `.env.example` with your actual backend canister ID.
+Then replace the values in `.env.example` file inside the frontend folder with your actual backend canister ID.
 
 ```env
 NEXT_PUBLIC_BACKEND_CANISTER_ID=sidufwl-skdfhxc-wuays
