@@ -18,7 +18,7 @@ npm install -g pnpm
 
 ```bash
 git clone https://github.com/waffensultan/ithink2025-icp-hackathon.git
-cd ithink2025
+cd ithink2025-icp-hackathon
 ```
 
 2. Start local IC replica
