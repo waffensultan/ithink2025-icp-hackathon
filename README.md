@@ -17,7 +17,7 @@ npm install -g pnpm
 1. Clone the repository
 
 ```bash
-git clone https://github.com/waffensultan/ithink2025.git
+git clone https://github.com/waffensultan/ithink2025-icp-hackathon.git
 cd ithink2025
 ```
 
