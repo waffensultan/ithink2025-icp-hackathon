@@ -38,6 +38,8 @@ dfx deploy
 dfx generate backend
 ```
 
+> **IMPORTANT**: Move the generated declarations folder (`src/declarations`) to `frontend/src/declarations` for proper imports.
+
 4. Run frontend server
 
 ```bash
