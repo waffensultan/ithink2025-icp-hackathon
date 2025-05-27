@@ -14,14 +14,14 @@ npm install -g pnpm
 
 ## Setup
 
-1. Clone the repository (Run on a CLI of your choice)
+##### 1. Clone the repository (Run on a CLI of your choice)
 
 ```bash
 git clone https://github.com/waffensultan/ithink2025-icp-hackathon.git
 cd ithink2025-icp-hackathon
 ```
 
-2. Start local IC replica (Run on WSL)
+##### 2. Start local IC replica (Run on WSL)
 
 ```bash
 dfx start --background
@@ -29,7 +29,7 @@ dfx start --background
 
 > This runs the local IC network on port 4943
 
-3. Build the frontend server (Run on a CLI of your choice)
+##### 3. Build the frontend server (Run on a CLI of your choice)
 
 ```bash
 cd frontend
@@ -37,7 +37,7 @@ pnpm install # install  project dependencies
 pnpm run build # this will output an `out` folder
 ```
 
-4. Create and deploy canisters (Run on WSL)
+##### 4. Create and deploy canisters (Run on WSL)
 
 ```bash
 # note: you must be at the project root level (Not inside backend or frontend folder)
@@ -48,8 +48,9 @@ dfx deploy
 dfx generate backend
 ```
 
-4.1 Update your .env.local with your canister IDs (Run on WSL)
-After running `dfx deploy`, retrieve your backend canister ID:
+##### 4.1 Update your .env.local with your canister IDs
+
+After running `dfx deploy`, retrieve your backend canister ID (Run on WSL):
 
 ```bash
 dfx canister id backend # example output: sidufwl-skdfhxc-wuays
@@ -64,7 +65,7 @@ DFX_NETWORK=local
 
 > **IMPORTANT**: Move the generated declarations folder (`src/declarations`) to `frontend/src/declarations` for proper imports.
 
-5. Run frontend server (Run on a CLI of your choice)
+##### 5. Run frontend server (Run on a CLI of your choice)
 
 ```bash
 cd frontend
