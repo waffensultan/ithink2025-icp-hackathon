@@ -1,0 +1,15 @@
+{
+    "canisters": {
+        "frontend": {
+            "entrypoint": "frontend/out/index.html",
+            "source": ["frontend/out"],
+            "type": "assets"
+        },
+        "backend": {
+            "type": "motoko",
+            "main": "backend/main.mo",
+            "candid": "frontend/src/declarations/backend/backend.did"
+        }
+    },
+    "output_env_file": ".env"
+}
