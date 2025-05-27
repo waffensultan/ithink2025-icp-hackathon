@@ -14,14 +14,14 @@ npm install -g pnpm
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository (Run on a CLI of your choice)
 
 ```bash
 git clone https://github.com/waffensultan/ithink2025-icp-hackathon.git
 cd ithink2025-icp-hackathon
 ```
 
-2. Start local IC replica
+2. Start local IC replica (Run on WSL)
 
 ```bash
 dfx start --background
@@ -29,9 +29,19 @@ dfx start --background
 
 > This runs the local IC network on port 4943
 
-3. Create and deploy canisters
+3. Build the frontend server (Run on a CLI of your choice)
 
 ```bash
+cd frontend
+pnpm install # install  project dependencies
+pnpm run build # this will output an `out` folder
+```
+
+4. Create and deploy canisters (Run on WSL)
+
+```bash
+# note: you must be at the project root level (Not inside backend or frontend folder)
+
 dfx canister create backend
 dfx canister create frontend
 dfx deploy
@@ -40,11 +50,10 @@ dfx generate backend
 
 > **IMPORTANT**: Move the generated declarations folder (`src/declarations`) to `frontend/src/declarations` for proper imports.
 
-4. Run frontend server
+5. Run frontend server (Run on a CLI of your choice)
 
 ```bash
 cd frontend
-pnpm install # install dependencies
 pnpm run dev
 ```
 
