@@ -117,4 +117,4 @@ Frontend canister via browser:
 
 1. The frontend connects to backend canister via candid definitions in `frontend/src/declarations`.
 2. You can view your backend canister Candid UI at:
-   `http://127.0.0.1:4943/?canisterId=ucwa4-rx777-77774-qaada-cai`
+   `http://127.0.0.1:4943/?canisterId=<canister_id>
