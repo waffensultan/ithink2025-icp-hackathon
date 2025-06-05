@@ -36,7 +36,7 @@ dfx canister create backend
 dfx canister create frontend
 ```
 
-### 3.1. Rename your .env.example to .env.local (IMPORTANT!)
+### 3.1. Rename your .env.example (inside ithink2025-icp-hackathon/src/frontend) to .env.local (IMPORTANT!)
 
 ### 3.2. Update your .env.local with your backend canister ID
 
