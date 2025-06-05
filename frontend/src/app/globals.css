@@ -1,26 +1,37 @@
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #f8f8f8;
+    --foreground: #0f0f0f;
+}
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+
+    --color-light: #f8f8f8;
+    --color-dark: #0f0f0f;
+    --color-primary: #0b4a2a;
+    --color-secondary: #337418;
+    --color-accent: #5dd62c;
+    --color-success: #00bc29;
+    --color-warning: #fcca00;
+    --color-danger: #fd0049;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    scroll-behavior: smooth !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-poppins);
 }
