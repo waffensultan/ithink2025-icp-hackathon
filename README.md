@@ -49,9 +49,9 @@ dfx canister id backend
 
 Then replace the values in your `.env.local` file inside the frontend folder with your actual backend canister ID.
 
-```javascript
-NEXT_PUBLIC_BACKEND_CANISTER_ID = sidufwl - skdfhxc - wuays; // THIS IS ONLY AN EXAMPLE!
-DFX_NETWORK = local;
+```env
+NEXT_PUBLIC_BACKEND_CANISTER_ID=sidufwl-skdfhxc-wuays; // THIS IS ONLY AN EXAMPLE!
+DFX_NETWORK=local;
 ```
 
 ### 4. Build the frontend server (Run on any CLI)
