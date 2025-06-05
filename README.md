@@ -29,48 +29,61 @@ dfx start --background
 
 > This runs the local IC network on port 4943
 
-#### 3. Build the frontend server (Run on a CLI of your choice)
+### 3. Create canisters (Run on WSL)
 
 ```bash
-cd frontend
-pnpm install # install  project dependencies
-pnpm run build # this will output an `out` folder
-```
-
-#### 4. Create and deploy canisters (Run on WSL)
-
-```bash
-# note: you must be at the project root level (Not inside backend or frontend folder)
-
 dfx canister create backend
 dfx canister create frontend
+```
+
+### 3.1. Rename your .env.example to .env.local (IMPORTANT!)
+
+### 3.2. Update your .env.local with your backend canister ID
+
+Retrieve your backend canister ID (Run on WSL):
+
+```bash
+dfx canister id backend
+# example output: sidufwl-skdfhxc-wuays
+```
+
+Then replace the values in your `.env.local` file inside the frontend folder with your actual backend canister ID.
+
+```javascript
+NEXT_PUBLIC_BACKEND_CANISTER_ID = sidufwl - skdfhxc - wuays; // THIS IS ONLY AN EXAMPLE!
+DFX_NETWORK = local;
+```
+
+### 4. Build the frontend server (Run on any CLI)
+
+```bash
+cd frontend # make sure you are inside the frontend folder
+pnpm install # this will install any project dependencies
+pnpm run build # this will output an 'out' folder
+```
+
+### 5. Deploy your canisters (Run on WSL)
+
+```bash
 dfx deploy
+```
+
+### 6. Generate backend types and declarations (Run on WSL)
+
+```bash
 dfx generate backend
 ```
 
-> **IMPORTANT**: Move the generated declarations folder from `dfx generate backend` (`src/declarations`) to `frontend/src/declarations` for proper imports.
+> **IMPORTANT**: Move the generated declarations folder from `dfx generate backend` (`ithink2025-icp-hackathon/src/declarations`) to `ithink2025-icp-hackathon/frontend/src/declarations` for proper imports.
 
-#### 4.1 Update your .env.local with your canister IDs
-
-After running `dfx deploy`, retrieve your backend canister ID (Run on WSL):
+### 7. Run frontend sever (Run on any CLI)
 
 ```bash
-dfx canister id backend # example output: sidufwl-skdfhxc-wuays
-```
-
-Then replace the values in `.env.example` file inside the frontend folder with your actual backend canister ID.
-
-```env
-NEXT_PUBLIC_BACKEND_CANISTER_ID=sidufwl-skdfhxc-wuays
-DFX_NETWORK=local
-```
-
-#### 5. Run frontend server (Run on a CLI of your choice)
-
-```bash
-cd frontend
+cd frontend # make sure you are inside the frontend server
 pnpm run dev
 ```
+
+> **NOTE**: The canisters must be deployed as long as the frontend server is running to be able to connect to the backend.
 
 ## D-Day (Deployment Day) ⚠️ FOR SUBMISSION ONLY ⚠️
 
