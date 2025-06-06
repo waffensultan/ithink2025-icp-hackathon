@@ -1,8 +1,20 @@
+"use client";
+
+import Link from "next/link";
+
 import { HeartIcon, BadgeCheckIcon } from "lucide-react";
+
+import { motion } from "motion/react";
 
 export default function Page() {
     return (
-        <main className="px-4 text-primary py-5">
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="px-4 text-primary py-5"
+        >
             <section className="flex flex-col">
                 <div className="flex items-center gap-2 text-primary text-3xl">
                     <HeartIcon size={30} />
@@ -14,7 +26,8 @@ export default function Page() {
                 <h1 className="font-medium text-2xl">Nagustuhan Ko</h1>
                 <div className="flex items-center overflow-x-auto whitespace-nowrap gap-3 w-full">
                     {Array.from({ length: 5 }).map((_, index) => (
-                        <article
+                        <Link
+                            href={"/product-info"}
                             key={index}
                             className="min-w-[180px] border-2 border-primary rounded-2xl flex flex-col gap-1"
                         >
@@ -38,7 +51,7 @@ export default function Page() {
                                     <BadgeCheckIcon size={18} />
                                 </div>
                             </section>
-                        </article>
+                        </Link>
                     ))}
                 </div>
             </section>
@@ -47,7 +60,8 @@ export default function Page() {
                 <h1 className="font-medium text-2xl">Huling Tinignan</h1>
                 <div className="flex overflow-x-auto whitespace-nowrap gap-4 w-full">
                     {Array.from({ length: 5 }).map((_, index) => (
-                        <article
+                        <Link
+                            href={"/product-info"}
                             key={index}
                             className="min-w-[180px] border-2 border-primary rounded-2xl flex flex-col gap-1"
                         >
@@ -71,7 +85,7 @@ export default function Page() {
                                     <BadgeCheckIcon size={18} />
                                 </div>
                             </section>
-                        </article>
+                        </Link>
                     ))}
                 </div>
             </section>
@@ -79,7 +93,8 @@ export default function Page() {
                 <h1 className="font-medium text-2xl">Bilhin Muli</h1>
                 <div className="flex overflow-x-auto whitespace-nowrap gap-4 w-full">
                     {Array.from({ length: 5 }).map((_, index) => (
-                        <article
+                        <Link
+                            href={"/product-info"}
                             key={index}
                             className="min-w-[180px] border-2 border-primary rounded-2xl flex flex-col gap-1"
                         >
@@ -103,10 +118,10 @@ export default function Page() {
                                     <BadgeCheckIcon size={18} />
                                 </div>
                             </section>
-                        </article>
+                        </Link>
                     ))}
                 </div>
             </section>
-        </main>
+        </motion.main>
     );
 }

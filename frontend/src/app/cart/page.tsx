@@ -1,12 +1,14 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
-import { ShoppingCartIcon, MinusIcon, PlusIcon } from "lucide-react";
+import { MinusIcon, PlusIcon, ChevronDownIcon, MapPinIcon } from "lucide-react";
 
 import { motion } from "motion/react";
 
 export default function Page() {
+    const [search, setSearch] = useState("");
+
     const cart = [
         {
             name: "Rice",
@@ -30,13 +32,20 @@ export default function Page() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="px-4 text-primary py-5"
+            className="px-4 text-primary py-5 flex flex-col"
         >
-            <section className="flex flex-col pb-3">
-                <div className="flex items-center gap-2 text-primary text-3xl">
-                    <ShoppingCartIcon size={30} />
+            <section className="flex flex-col gap-1 pb-8">
+                <div className="flex items-center justify-between gap-2 text-3xl">
                     <h1 className="font-bold">Cart</h1>
+                    <ChevronDownIcon />
                 </div>
+                <input
+                    type="text"
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
+                    placeholder="Search..."
+                    className="rounded-2xl p-3 border border-primary"
+                />
             </section>
 
             <section className="flex flex-col gap-6">
@@ -81,10 +90,37 @@ export default function Page() {
                                 </div>
                             </div>
                         </article>
-                        <hr />
+                        <hr className="h-0.5 border-none bg-gradient-to-r from-[#4AC281] via-[#235C3D] to-[#4AC281] opacity-30" />
                     </Fragment>
                 ))}
             </section>
+
+            <article className="bg-primary text-dark-foreground rounded-t-4xl p-10 w-full absolute bottom-0 left-0 flex flex-col gap-10">
+                <div className="flex flex-col gap-2">
+                    <h3 className="font-semibold text-xl">Delivery Address</h3>
+                    <div className="border rounded-2xl p-5 text-sm">
+                        <div className="opacity-50 flex items-center gap-2">
+                            <MapPinIcon />
+                            <span>Brgy. Masaya, Manila</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section className="flex flex-col gap-3">
+                    <div className="flex justify-between items-center">
+                        <span className="text-xl">Total:</span>
+                        <h3 className="font-bold text-2xl">
+                            400 PHP{" "}
+                            <span className="font-normal opacity-50">
+                                1.5 ICP
+                            </span>
+                        </h3>
+                    </div>
+                    <button className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
+                        <span>CONFIRM</span>
+                    </button>
+                </section>
+            </article>
         </motion.main>
     );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import {
     LeafIcon,
     PencilIcon,
@@ -6,9 +8,17 @@ import {
     RulerIcon,
 } from "lucide-react";
 
+import { motion } from "motion/react";
+
 export default function Page() {
     return (
-        <main className="px-4 text-primary py-5">
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="px-4 text-primary py-5"
+        >
             <section className="flex justify-between items-center pb-3">
                 <div className="flex items-center gap-2 text-primary text-3xl">
                     <LeafIcon size={30} />
@@ -20,7 +30,11 @@ export default function Page() {
                 </div>
             </section>
             <article>
-                <img src="/profile/farm/farm.png" alt="farm" className="w-full" />
+                <img
+                    src="/profile/farm/farm.png"
+                    alt="farm"
+                    className="w-full"
+                />
             </article>
 
             <section className="flex flex-col gap-2 py-5">
@@ -69,6 +83,6 @@ export default function Page() {
                     </p>
                 </div>
             </section>
-        </main>
+        </motion.main>
     );
 }

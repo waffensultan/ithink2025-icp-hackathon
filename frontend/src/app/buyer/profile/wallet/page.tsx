@@ -1,8 +1,18 @@
+"use client";
+
 import { WalletIcon, CircleDollarSignIcon as DollarIcon } from "lucide-react";
+
+import { motion } from "motion/react";
 
 export default function Page() {
     return (
-        <main className="px-4 text-primary py-5">
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="px-4 text-primary py-5"
+        >
             <div className="flex  flex-col gap-1 pb-3">
                 <div className="flex items-center gap-2 text-primary text-3xl">
                     <WalletIcon size={30} />
@@ -22,6 +32,6 @@ export default function Page() {
                     <span className="opacity-50 -mt-1">Kita</span>
                 </div>
             </article>
-        </main>
+        </motion.main>
     );
 }

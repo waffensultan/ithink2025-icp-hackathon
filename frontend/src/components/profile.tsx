@@ -98,11 +98,19 @@ export default function Profile({ user }: ProfileProps) {
     };
 
     return (
-        <main className="w-full flex flex-col gap-3">
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full flex flex-col gap-3"
+        >
             <section className="w-full pt-25 flex items-center gap-2 px-4 bg-gradient-to-t from-dark-foreground to-[#cbd7bf]">
                 <div className="w-25 h-20 rounded-md border-1 border-primary">
                     <img
-                        src={`/profile/${user === "magsasaka" ? "farmer" : "buyer"}.jpg`}
+                        src={`/profile/${
+                            user === "magsasaka" ? "farmer" : "buyer"
+                        }.jpg`}
                         alt="farmer"
                         className="object-cover h-full w-full rounded-md"
                     />
@@ -212,6 +220,6 @@ export default function Profile({ user }: ProfileProps) {
                     )}
                 </nav>
             </div>
-        </main>
+        </motion.main>
     );
 }

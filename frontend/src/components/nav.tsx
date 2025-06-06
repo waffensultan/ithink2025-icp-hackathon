@@ -14,9 +14,9 @@ export default function Nav() {
                     </h2>
                 </Link>
             </section>
-            <button className="bg-primary rounded-md py-2 px-3 font-bold text-light">
+            <Link href={"/cart"} className="bg-primary rounded-md py-2 px-3 font-bold text-light">
                 <ShoppingCartIcon />
-            </button>
+            </Link>
         </nav>
     );
 }
