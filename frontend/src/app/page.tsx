@@ -97,7 +97,7 @@ function Landing({
 }
 
 type OnboardingPhase = 0 | 1 | 2;
-type OnboardingRole = "magsasaka" | "mamimili";
+export type OnboardingRole = "magsasaka" | "mamimili";
 function Onboarding() {
     const [phase, setPhase] = useState<OnboardingPhase>(0);
     const [selectedRole, setSelectedRole] = useState<
