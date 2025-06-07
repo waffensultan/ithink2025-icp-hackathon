@@ -104,6 +104,14 @@ function Onboarding() {
         OnboardingRole | undefined
     >(undefined);
 
+    useEffect(() => {
+        if (selectedRole) {
+            if (typeof window !== "undefined" && window.localStorage) {
+                localStorage.setItem('selectedRole', selectedRole);
+            }
+        }
+    }, [selectedRole]);
+
     const router = useRouter();
 
     const phases: Record<OnboardingPhase, React.ReactElement> = {
@@ -228,7 +236,7 @@ function Onboarding() {
                     >
                         <span>NEXT</span>
                     </button>
-                    <button onClick={() => router.push("/auth")}>
+                    <button onClick={() => setPhase(2)}>
                         <span className="opacity-50">Skip</span>
                     </button>
                 </div>

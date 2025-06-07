@@ -1,8 +1,39 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
+import { useRouter } from "next/navigation";
+
 import { motion } from "motion/react";
+import { OnboardingRole } from "@/app/page";
 
 export default function Auth() {
+    const [savedRole, setSavedRole] = useState<OnboardingRole | null>(null);
+
+    const router = useRouter();
+
+    useEffect(() => {
+        const role = localStorage.getItem(
+            "selectedRole"
+        ) as OnboardingRole | null;
+
+        if (role) {
+            if (typeof window !== "undefined" && window.localStorage) {
+                setSavedRole(role);
+            }
+        }
+    }, []);
+
+    const redirect = () => {
+        if (savedRole) {
+            if (savedRole === "magsasaka") {
+                router.push("/farmer");
+            } else if (savedRole === "mamimili") {
+                router.push("/buyer");
+            }
+        }
+    }
+
     return (
         <main className="bg-primary text-dark-foreground h-screen flex flex-col justify-end items-center relative overflow-hidden">
             <img
@@ -41,15 +72,15 @@ export default function Auth() {
                     </h5>
 
                     <section className="flex flex-col gap-1">
-                        <button className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
+                        <button onClick={() => redirect()} className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
                             <span>COINBASE</span>
                         </button>
 
-                        <button className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
+                        <button onClick={() => redirect()} className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
                             <span>INTERNET COMPUTER</span>
                         </button>
 
-                        <button className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
+                        <button onClick={() => redirect()} className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
                             <span>METAMASK</span>
                         </button>
                     </section>

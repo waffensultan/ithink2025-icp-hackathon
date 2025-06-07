@@ -7,7 +7,7 @@ export default function BuyerProfileLayout({
 }) {
     return (
         <>
-            <Profile user="mamimili" />
+            <Profile />
             {children}
         </>
     );

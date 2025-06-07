@@ -1,3 +1,5 @@
+"use client";
+
 import {
     HeartIcon,
     StarIcon,
@@ -11,9 +13,17 @@ import {
     ShoppingCartIcon,
 } from "lucide-react";
 
+import { motion } from "motion/react";
+
 export default function Page() {
     return (
-        <main className="w-full text-primary pb-3">
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="w-full text-primary pb-3"
+        >
             <div className="flex flex-col gap-1 pb-3">
                 <div className="w-full h-50">
                     <img
@@ -216,6 +226,6 @@ export default function Page() {
                     </div>
                 </section>
             </section>
-        </main>
+        </motion.main>
     );
 }

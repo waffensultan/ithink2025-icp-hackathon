@@ -1,3 +1,4 @@
+import ProtectedRoute from "@/components/protected-route";
 import Nav from "@/components/nav";
 import BottomNav from "@/components/bottom-nav";
 
@@ -7,10 +8,12 @@ export default function AuthenticatedRootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <main className="bg-dark-foreground h-screen w-full overflow-auto relative pb-20">
-            <Nav />
-            {children}
-            <BottomNav user="mamimili" />
-        </main>
+        <ProtectedRoute allowedRole="mamimili">
+            <main className="bg-dark-foreground h-screen w-full overflow-auto relative pb-20">
+                <Nav />
+                {children}
+                <BottomNav />
+            </main>
+        </ProtectedRoute>
     );
 }

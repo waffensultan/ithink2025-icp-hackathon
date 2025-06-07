@@ -7,7 +7,7 @@ export default function FarmerProfileLayout({
 }) {
     return (
         <>
-            <Profile user="magsasaka" />
+            <Profile />
             {children}
         </>
     );

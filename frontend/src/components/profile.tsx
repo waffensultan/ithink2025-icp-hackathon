@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
@@ -20,11 +22,22 @@ import Link from "next/link";
 
 import { type OnboardingRole } from "@/app/page";
 
-interface ProfileProps {
-    user: OnboardingRole;
-}
-export default function Profile({ user }: ProfileProps) {
+export default function Profile() {
+    const [user, setUser] = useState<OnboardingRole | null>(null);
+
     const currentPath = usePathname();
+
+    useEffect(() => {
+        const role = localStorage.getItem(
+            "selectedRole"
+        ) as OnboardingRole | null;
+
+        if (role) {
+            if (typeof window !== "undefined" && window.localStorage) {
+                setUser(role);
+            }
+        }
+    }, []);
 
     const statuses: Record<
         OnboardingRole,
@@ -153,71 +166,75 @@ export default function Profile({ user }: ProfileProps) {
                             : "Mga Binili"}
                     </h2>
                     <div className="flex items-center justify-evenly gap-1">
-                        {Object.entries(statuses[user]).map(
-                            ([status, count], index) => (
-                                <article
-                                    key={status}
-                                    className={`grow border ${statusesColors[user].colors[index]} rounded-2xl p-2 flex flex-col`}
-                                >
-                                    <h3 className="font-bold text-xl">
-                                        {count}
-                                    </h3>
-                                    <h5 className="tracking-tight text-sm">
-                                        {status}
-                                    </h5>
-                                </article>
-                            )
-                        )}
+                        {user &&
+                            statuses[user] &&
+                            Object.entries(statuses[user]).map(
+                                ([status, count], index) => (
+                                    <article
+                                        key={status}
+                                        className={`grow border ${statusesColors[user].colors[index]} rounded-2xl p-2 flex flex-col`}
+                                    >
+                                        <h3 className="font-bold text-xl">
+                                            {count}
+                                        </h3>
+                                        <h5 className="tracking-tight text-sm">
+                                            {status}
+                                        </h5>
+                                    </article>
+                                )
+                            )}
                     </div>
                 </div>
             </section>
 
             <div className="px-4">
                 <nav className="flex items-center rounded-full bg-[#235b3c] justify-around p-3 text-light gap-2">
-                    {Object.entries(links[user]).map(
-                        ([title, { icon: Icon, link }]) => {
-                            const isActive = currentPath === link;
+                    {user &&
+                        links[user] &&
+                        Object.entries(links[user]).map(
+                            ([title, { icon: Icon, link }]) => {
+                                const isActive = currentPath === link;
 
-                            return (
-                                <motion.div
-                                    key={title}
-                                    layout
-                                    transition={{
-                                        layout: {
-                                            duration: 0.3,
-                                            ease: "easeInOut",
-                                        },
-                                    }}
-                                    className={`flex items-center justify-center rounded-full overflow-hidden ${
-                                        isActive ? "flex-[1.5]" : "flex-1"
-                                    }`}
-                                >
-                                    <Link
-                                        href={link as string}
-                                        scroll={false}
-                                        className={`w-full flex items-center justify-center gap-2 border ${
-                                            isActive
-                                                ? "border-white bg-white/10 text-white"
-                                                : "border-transparent text-white/70"
-                                        } rounded-full py-2 px-4 transition-all duration-300`}
+                                return (
+                                    <motion.div
+                                        key={title}
+                                        layout
+                                        transition={{
+                                            layout: {
+                                                duration: 0.3,
+                                                ease: "easeInOut",
+                                            },
+                                        }}
+                                        className={`flex items-center justify-center rounded-full overflow-hidden ${
+                                            isActive ? "flex-[1.5]" : "flex-1"
+                                        }`}
                                     >
-                                        <motion.div
-                                            layout
-                                            className="w-5 h-5 shrink-0 flex items-center justify-center"
+                                        <Link
+                                            href={link as string}
+                                            scroll={false}
+                                            className={`w-full flex items-center justify-center gap-2 border ${
+                                                isActive
+                                                    ? "border-white bg-white/10 text-white"
+                                                    : "border-transparent text-white/70"
+                                            } rounded-full py-2 px-4 transition-all duration-300`}
                                         >
-                                            <Icon className="w-5 h-5" />
-                                        </motion.div>
-                                        <motion.span
-                                            layout
-                                            className="whitespace-nowrap text-sm font-medium"
-                                        >
-                                            {title}
-                                        </motion.span>
-                                    </Link>
-                                </motion.div>
-                            );
-                        }
-                    )}
+                                            <motion.div
+                                                layout
+                                                className="w-5 h-5 shrink-0 flex items-center justify-center"
+                                            >
+                                                <Icon className="w-5 h-5" />
+                                            </motion.div>
+                                            <motion.span
+                                                layout
+                                                className="whitespace-nowrap text-sm font-medium"
+                                            >
+                                                {title}
+                                            </motion.span>
+                                        </Link>
+                                    </motion.div>
+                                );
+                            }
+                        )}
                 </nav>
             </div>
         </motion.main>
