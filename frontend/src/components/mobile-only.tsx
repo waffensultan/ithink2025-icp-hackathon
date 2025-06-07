@@ -27,7 +27,7 @@ export default function MobileOnly({
             <div className="w-full h-screen flex items-center justify-center p-4 text-center">
                 <div>
                     <h1 className="text-2xl font-semibold">Mobile Only</h1>
-                    <p className="text-muted-foreground mt-2">
+                    <p className="text-muted-foreground mt-2 max-w-3xl">
                         FarmChain is built mobile-first to ensure accessibility
                         for Filipino farmers, who often rely on smartphones.
                         Please open this app on a phone or resize your browser
