@@ -10,7 +10,7 @@ export default function AuthenticatedRootLayout({
         <main className="bg-dark-foreground h-screen w-full overflow-auto relative pb-20">
             <Nav />
             {children}
-            <BottomNav user="magsasaka" />
+            <BottomNav />
         </main>
     );
 }
