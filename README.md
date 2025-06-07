@@ -22,11 +22,14 @@ FarmChain is a decentralized platform built to revolutionize the agricultural su
 -   🎤 **Ostline** – Pitch & Documentation Lead
 -   💻 **Zean** – Developer
 
-## 🤝 Join Us
+## 🤝 Why It Matters
 
-FarmChain is more than just tech — it's a movement to uplift the backbone of the Filipino economy: our farmers.
+FarmChain isn’t just a hackathon project — it’s a mission.
+
+We believe the farmers who feed our nation deserve better systems, better earnings, and better lives.
 
 ## 🧑‍💻 Contributing
+
 ### Prerequisites
 
 1. Install DFX SDK (Internet Computer CLI). For further instructions, read here: https://internetcomputer.org/docs/building-apps/getting-started/install#installing-dfx-via-dfxvm
@@ -156,4 +159,3 @@ Frontend canister via browser:
 1. The frontend connects to backend canister via candid definitions in `frontend/src/declarations`.
 2. You can view your backend canister Candid UI at:
    `http://127.0.0.1:4943/?canisterId=<canister_id>
-
