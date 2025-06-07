@@ -16,11 +16,11 @@ FarmChain is a decentralized platform built to revolutionize the agricultural su
 
 ## 🚜 Team
 
--   👨‍💻 **Kurt** – Blockchain Lead & UI/UX Design
--   ⚙️ **Waffen** – Tech Lead
--   🎨 **Coleen** – UI/UX Designer & Research
--   🎤 **Ostline** – Pitch & Documentation
--   💻 **Zean** – Developer
+-   👨‍💻 **Kurt McCarver** – Blockchain Lead & UI/UX Design
+-   ⚙️ **Waffen Sultan** – Tech Lead
+-   🎨 **Coleen Legaspi** – UI/UX Designer & Research
+-   🎤 **Ostline Casao** – Pitch & Documentation
+-   💻 **Zean Balboa** – Developer
 
 ## 🤝 Why It Matters
 
