@@ -11,3 +11,6 @@ frontend/out/
 
 # env files
 .env
+
+# todos
+*.todo
