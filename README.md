@@ -28,6 +28,10 @@ FarmChain isn’t just a hackathon project — it’s a mission.
 
 We believe the farmers who feed our nation deserve better systems, better earnings, and better lives.
 
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
 ## 🧑‍💻 Contributing
 
 ### Prerequisites
