@@ -1,9 +1,7 @@
 "use client";
 
 import {
-    HeartIcon,
-    StarIcon,
-    StarHalfIcon,
+    StarIcon as StarIcon2,
     RulerIcon,
     MapPinIcon,
     BadgeCheckIcon,
@@ -12,6 +10,8 @@ import {
     MessageSquareIcon,
     ShoppingCartIcon,
 } from "lucide-react";
+
+import { HeartIcon, StarIcon } from "@heroicons/react/16/solid";
 
 import { motion } from "motion/react";
 
@@ -53,7 +53,7 @@ export default function Page() {
                 <hr className="h-0.5 border-none bg-gradient-to-r from-[#4AC281] via-[#235C3D] to-[#4AC281] opacity-30" />
                 <div className="flex justify-between items-center text-dark">
                     <h3 className="text-3xl text-dark">Rice</h3>
-                    <HeartIcon size={30} />
+                    <HeartIcon className="size-10 text-red-700" />
                 </div>
                 <div className="flex flex-col gap-1">
                     <h5 className="font-bold text-lg">Detalye ng Produkto</h5>
@@ -71,7 +71,7 @@ export default function Page() {
                     <div className="flex items-center gap-3">
                         <h5 className="font-bold text-lg">Rebyu ng Produkto</h5>
                         <div className="flex items-start gap-1">
-                            <StarIcon className="text-warning" />
+                            <StarIcon className="text-warning size-6" />
                             <span className="text-accent text-lg font-semibold">
                                 4.5
                             </span>
@@ -96,11 +96,10 @@ export default function Page() {
                                             (_, index) => (
                                                 <StarIcon
                                                     key={index}
-                                                    size={20}
+                                                    className="size-6 text-warning"
                                                 />
                                             )
                                         )}
-                                        <StarHalfIcon size={20} />
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +177,7 @@ export default function Page() {
                         </div>
                         <div className="flex items-center gap-1 whitespace-nowrap overflow-x-scroll w-full">
                             <div className="flex items-center gap-1 py-1 px-4 rounded-full bg-[#bccdb4] text-[#648f71] text-sm border-1 border-primary">
-                                <StarIcon size={20} />
+                                <StarIcon2 size={20} />
                                 <span>4.5</span>
                             </div>
                             <div className="flex items-center gap-1 py-1 px-4 rounded-full bg-[#bccdb4] text-[#648f71] text-sm border-1 border-primary">
@@ -188,7 +187,7 @@ export default function Page() {
 
                             <div className="flex items-center gap-1 py-1 px-4 rounded-full bg-[#bccdb4] text-[#648f71] text-sm border-1 border-primary">
                                 <CopyIcon size={20} />
-                                <span>c3h5v-xiaaa-aaaah-qcfzq-cai</span>
+                                <span>c3h5...qcai</span>
                             </div>
                         </div>
                     </section>
@@ -199,7 +198,7 @@ export default function Page() {
                         <MessageSquareIcon size={50} />
                         <input
                             type="text"
-                            placeholder="Search..."
+                            placeholder="Message..."
                             className="rounded-2xl p-3 border border-primary w-full"
                         />
                     </div>
@@ -212,7 +211,7 @@ export default function Page() {
                         </button>
                         <button
                             disabled
-                            className="grow border border-primary rounded-xl p-3 flex items-center justify-center gap-1"
+                            className="grow border border-primary rounded-xl p-3 flex items-center justify-center gap-3"
                         >
                             <ShoppingCartIcon />
                             <span>Add to Cart</span>

@@ -15,7 +15,7 @@ export default function AddCrop() {
         >
             <div className="flex  flex-col gap-1 pb-3">
                 <div className="flex items-center gap-2 text-primary text-3xl">
-                    <h1 className="font-bold">Tanim</h1>
+                    <h1 className="font-bold">Magbenta</h1>
                 </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -28,6 +28,7 @@ export default function AddCrop() {
                     />
                 </div>
 
+                {/** this is where they upload their mages */}
                 <div className="flex flex-col gap-1 px-3">
                     <h4 className="font-semibold">Imahe ng Tanim</h4>
                     <article className="border rounded-xl flex justify-center items-center gap-1 h-60 bg-[#cad1bc] text-sm">
@@ -54,8 +55,8 @@ export default function AddCrop() {
                     />
                 </div>
 
-                <button className="bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
-                    <span>SAVE</span>
+                <button className="mx-2 bg-[#337418] text-dark-foreground font-semibold text-md rounded-xl py-5">
+                    <span>LIST</span>
                 </button>
             </div>
         </motion.main>

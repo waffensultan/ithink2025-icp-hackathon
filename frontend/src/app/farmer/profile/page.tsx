@@ -26,7 +26,7 @@ export default function Page() {
                 </div>
                 <div className="flex items-center gap-2 text-sm opacity-50">
                     <PencilIcon size={15} />
-                    <span>Edit Farm</span>
+                    <span>Edit Profile</span>
                 </div>
             </section>
             <article>

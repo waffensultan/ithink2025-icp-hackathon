@@ -99,10 +99,10 @@ export default function Profile() {
                 icon: HeartIcon,
                 link: "/buyer/profile",
             },
-            Cart: {
-                icon: ShoppingCartIcon,
-                link: "/buyer/profile/cart",
-            },
+            // Cart: {
+            //     icon: ShoppingCartIcon,
+            //     link: "/buyer/profile/cart",
+            // },
             Wallet: {
                 icon: WalletIcon,
                 link: "/buyer/profile/wallet",
@@ -152,7 +152,7 @@ export default function Profile() {
 
                         <div className="flex items-center gap-1 py-1 px-4 rounded-full bg-[#bccdb4] text-[#648f71] text-sm border-1 border-primary">
                             <CopyIcon size={20} />
-                            <span>c3h5v-xiaaa-aaaah-qcfzq-cai</span>
+                            <span>c3h5...qcai</span>
                         </div>
                     </div>
                 </section>

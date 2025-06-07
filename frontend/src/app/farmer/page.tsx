@@ -52,9 +52,10 @@ export default function FarmerDashboard() {
                         {/* Logo placeholder for infinity-like icon */}
                         <div className="w-9 h-9 rounded-full border border-primary/20 flex items-center justify-center bg-primary/10 mr-2">
                             <div className="w-7 h-7 rounded-full bg-primary/40 flex items-center justify-center">
-                                <span className="text-white text-xs font-bold">
-                                    Logo
-                                </span>
+                                <img
+                                    src="/profile/wallet/icp.svg"
+                                    alt="icp-icon"
+                                />
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 
-import { HeartIcon, BadgeCheckIcon } from "lucide-react";
+import { BadgeCheckIcon } from "lucide-react";
+import { HeartIcon } from "@heroicons/react/16/solid";
 
 import { motion } from "motion/react";
 
@@ -16,8 +17,8 @@ export default function Page() {
             className="px-4 text-primary py-5"
         >
             <section className="flex flex-col">
-                <div className="flex items-center gap-2 text-primary text-3xl">
-                    <HeartIcon size={30} />
+                <div className="flex items-center gap-1 text-primary text-3xl">
+                    <HeartIcon className="size-10 text-red-700" />
                     <h1 className="font-bold">Aktibidad</h1>
                 </div>
             </section>

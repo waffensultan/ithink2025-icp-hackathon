@@ -89,49 +89,74 @@ export default function BottomNav() {
                 {user === "magsasaka" && (
                     <Link
                         href={"/farmer/add-crop"}
-                        className="border-4 border-dark-foreground bg-[#2e5441] w-15 h-15 rounded-full flex items-center justify-center shadow-lg"
+                        className="border-4 border-dark-foreground bg-[#2e5441] w-18 h-18 rounded-full flex items-center justify-center shadow-lg"
                     >
                         <PlusIcon size={32} />
                     </Link>
                 )}
             </div>
-            <div className="flex gap-8">
-                {user &&
-                    links[user] &&
-                    Object.entries(links[user])
-                        .slice(0, 2)
-                        .map(([label, { icon: Icon, link }]) => (
-                            <Link
-                                href={link as string}
-                                key={label}
-                                className="flex flex-col items-center gap-1"
-                            >
-                                <Icon size={40} />
-                                <span className="text-lg font-medium">
-                                    {label}
-                                </span>
-                            </Link>
-                        ))}
-            </div>
+            {user && user === "mamimili" && (
+                <div className="flex gap-8 w-full justify-around">
+                    {user &&
+                        links[user] &&
+                        Object.entries(links[user]).map(
+                            ([label, { icon: Icon, link }]) => (
+                                <Link
+                                    href={link as string}
+                                    key={label}
+                                    className="flex flex-col items-center gap-1"
+                                >
+                                    <Icon size={40} />
+                                    <span className="text-lg font-medium">
+                                        {label}
+                                    </span>
+                                </Link>
+                            )
+                        )}
+                </div>
+            )}
 
-            <div className="flex gap-8">
-                {user &&
-                    links[user] &&
-                    Object.entries(links[user])
-                        .slice(2)
-                        .map(([label, { icon: Icon, link }]) => (
-                            <Link
-                                href={link as string}
-                                key={label}
-                                className="flex flex-col items-center gap-1"
-                            >
-                                <Icon size={40} />
-                                <span className="text-lg font-medium">
-                                    {label}
-                                </span>
-                            </Link>
-                        ))}
-            </div>
+            {user && user === "magsasaka" && (
+                <>
+                    <div className="flex gap-8">
+                        {user &&
+                            links[user] &&
+                            Object.entries(links[user])
+                                .slice(0, 2)
+                                .map(([label, { icon: Icon, link }]) => (
+                                    <Link
+                                        href={link as string}
+                                        key={label}
+                                        className="flex flex-col items-center gap-1"
+                                    >
+                                        <Icon size={40} />
+                                        <span className="text-lg font-medium">
+                                            {label}
+                                        </span>
+                                    </Link>
+                                ))}
+                    </div>
+
+                    <div className="flex gap-8">
+                        {user &&
+                            links[user] &&
+                            Object.entries(links[user])
+                                .slice(2)
+                                .map(([label, { icon: Icon, link }]) => (
+                                    <Link
+                                        href={link as string}
+                                        key={label}
+                                        className="flex flex-col items-center gap-1"
+                                    >
+                                        <Icon size={40} />
+                                        <span className="text-lg font-medium">
+                                            {label}
+                                        </span>
+                                    </Link>
+                                ))}
+                    </div>
+                </>
+            )}
         </motion.nav>
     );
 }

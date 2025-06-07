@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import Link from "next/link";
+
 import { motion } from "motion/react";
 
 export default function BuyerHome() {
@@ -56,7 +58,8 @@ export default function BuyerHome() {
                 </div>
                 <div className="flex gap-4 overflow-x-auto pb-1 hide-scrollbar">
                     {[1, 2].map((item, i) => (
-                        <div
+                        <Link
+                            href={"/product-info"}
                             key={i}
                             className="min-w-[220px] max-w-[220px] rounded-2xl border-2 border-primary flex-shrink-0 overflow-hidden"
                         >
@@ -86,7 +89,7 @@ export default function BuyerHome() {
                                     />
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>
