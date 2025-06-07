@@ -28,8 +28,10 @@ export default function MobileOnly({
                 <div>
                     <h1 className="text-2xl font-semibold">Mobile Only</h1>
                     <p className="text-muted-foreground mt-2">
-                        This app is designed for mobile devices only. Please
-                        open it on a phone or resize your browser.
+                        FarmChain is built mobile-first to ensure accessibility
+                        for Filipino farmers, who often rely on smartphones.
+                        Please open this app on a phone or resize your browser
+                        window.
                     </p>
                 </div>
             </div>
