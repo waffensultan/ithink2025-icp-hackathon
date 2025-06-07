@@ -89,7 +89,7 @@ export default function BottomNav() {
                 {user === "magsasaka" && (
                     <Link
                         href={"/farmer/add-crop"}
-                        className="border-4 border-dark-foreground bg-[#2e5441] w-20 h-20 rounded-full flex items-center justify-center shadow-lg"
+                        className="border-4 border-dark-foreground bg-[#2e5441] w-15 h-15 rounded-full flex items-center justify-center shadow-lg"
                     >
                         <PlusIcon size={32} />
                     </Link>
