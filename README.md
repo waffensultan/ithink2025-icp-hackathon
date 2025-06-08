@@ -2,6 +2,8 @@
 
 > Empowering Filipino Farmers with Transparent, Fair, and Profitable Supply Chains Using Web3
 
+Check it out at: https://iu46t-vyaaa-aaaad-qhlsa-cai.icp0.io/
+
 ## 🚀 Overview
 
 FarmChain is a decentralized platform built to revolutionize the agricultural supply chain in the Philippines. By combining blockchain provenance, smart contract-based marketplaces, and tokenized microloans, we’re giving Filipino farmers the tools to earn more, trust more, and grow more.
@@ -114,52 +116,3 @@ dfx generate backend
 cd frontend # make sure you are inside the frontend server
 pnpm run dev
 ```
-
-> **NOTE**: The canisters must be deployed as long as the frontend server is running to be able to connect to the backend.
-
-### D-Day (Deployment Day) ⚠️ FOR SUBMISSION ONLY ⚠️
-
-1. Build the frontend canister
-
-```bash
-cd frontend
-pnpm run build
-```
-
-> This generates a static file in the `frontend/out/` folder using `export` mode
-
-2. Back to project root
-
-```bash
-cd ..
-```
-
-3. Re-deploy the canisters
-
-```bash
-dfx deploy --mode=upgrade --network=ic
-```
-
-> `--mode=upgrade` keeps canister IDs and upgrades existing canisters
-> `--network=ic` deploys to the Internet Computer mainnet instead of local
-
-> ⚠ Deploying to the ICP mainnet requires:
->
-> -   A DFINITY identity (created with `dfx identity new`)
-> -   A wallet canister
-> -   Enough cycles (ICP tokens converted into cycles)
->
-> Live deployments are NOT a requirement, so we can just give them our repository link, we just have to make sure that things are working.
-
-4. Get live URLs
-
-```bash
-Frontend canister via browser:
-    - https://<our-canister-id>.icp0.io/
-```
-
-### Notes
-
-1. The frontend connects to backend canister via candid definitions in `frontend/src/declarations`.
-2. You can view your backend canister Candid UI at:
-   `http://127.0.0.1:4943/?canisterId=<canister_id>
